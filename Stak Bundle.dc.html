@@ -8,27 +8,25 @@
 <body>
 <template id="__bundler_thumbnail">
 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100" height="100" rx="22" fill="#0a0a0a"/>
-  <rect x="30" y="30" width="40" height="40" rx="11" fill="url(#g)"/>
-  <text x="50" y="58" font-family="Montserrat,sans-serif" font-size="22" font-weight="800" fill="#fff" text-anchor="middle">U</text>
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f97316"/>
-      <stop offset="0.5" stop-color="#ef4444"/>
-      <stop offset="1" stop-color="#9333ea"/>
-    </linearGradient>
-  </defs>
+  <rect width="100" height="100" fill="#ffffff"/>
 </svg>
 </template>
 <x-dc>
 <helmet data-dc-atomics="">
+<link rel="icon" type="image/png" href="/favicon.png">
+<title>UsefulApps.io — macOS Productivity App Bundle</title>
+<meta name="description" content="10 handcrafted Mac apps. One lifetime license — buy once, own all apps forever. $29 instead of $79. No subscription, free updates forever.">
+<meta property="og:title" content="UsefulApps.io — macOS Productivity App Bundle">
+<meta property="og:description" content="10 handcrafted Mac apps. One lifetime license — buy once, own forever. $29 instead of $79.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://usefulapps.io/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <meta name="ext-resource-dependency" content="uploads/1024x1024bb.png">
-<meta name="ext-resource-dependency" content="uploads/Focus_Timer_1 copy.webp">
-<meta name="ext-resource-dependency" content="uploads/Focus_Timer_2 copy.webp">
-<meta name="ext-resource-dependency" content="uploads/Focus_Timer_3 copy.webp">
-<meta name="ext-resource-dependency" content="uploads/Focus_Timer_4 copy.webp">
+<meta name="ext-resource-dependency" content="uploads/focus-timer-1.webp">
+<meta name="ext-resource-dependency" content="uploads/focus-timer-2.webp">
+<meta name="ext-resource-dependency" content="uploads/focus-timer-3.webp">
+<meta name="ext-resource-dependency" content="uploads/focus-timer-4.webp">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
@@ -266,7 +264,7 @@ a{color:inherit}
             <div onClick="{{ card.onClick }}" style="cursor:pointer;border:1px solid rgba(0,0,0,.08);border-radius:10px;overflow:hidden;background:#fff;transition:transform .18s ease,box-shadow .18s ease,border-color .18s" style-hover="transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.1);border-color:rgba(0,0,0,.14)">
               <div style="position:relative;aspect-ratio:16/9;overflow:hidden;background:{{ card.wall }}">
                 <sc-if value="{{ card.hasShot }}" hint-placeholder-val="{{ false }}">
-                  <img src="{{ card.shot0 }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+                  <img srcset="{{ card.shot0 }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
                 </sc-if>
                 <sc-if value="{{ card.noShot }}" hint-placeholder-val="{{ true }}">
                 <div style="position:absolute;inset:0">
@@ -317,7 +315,7 @@ a{color:inherit}
           <sc-for list="{{ filtered }}" as="card" hint-placeholder-count="6">
             <div onClick="{{ card.onClick }}" style="display:flex;align-items:center;gap:16px;padding:15px 18px;border-bottom:1px solid rgba(0,0,0,.06);cursor:pointer" style-hover="background:#fafafa">
               <sc-if value="{{ card.hasIcon }}" hint-placeholder-val="{{ false }}">
-                <img src="{{ card.icon }}" alt="" style="flex:none;width:44px;height:44px;border-radius:12px;object-fit:cover;display:block">
+                <img srcset="{{ card.icon }}" alt="" style="flex:none;width:44px;height:44px;border-radius:12px;object-fit:cover;display:block">
               </sc-if>
               <sc-if value="{{ card.noIcon }}" hint-placeholder-val="{{ true }}">
               <div style="flex:none;width:44px;height:44px;border-radius:12px;background:linear-gradient(150deg,#3c3c3c,#0b0b0b);display:flex;align-items:center;justify-content:center;color:#fff;font-family:Montserrat,sans-serif;font-weight:700;font-size:19px">{{ card.initial }}</div>
@@ -692,7 +690,7 @@ a{color:inherit}
     <section data-screen-label="App hero" style="max-width:1180px;margin:0 auto;padding:24px 28px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:center">
       <div>
         <sc-if value="{{ appHasIcon }}" hint-placeholder-val="{{ false }}">
-          <img src="{{ app.icon }}" alt="" style="width:84px;height:84px;border-radius:20px;object-fit:cover;display:block;box-shadow:0 8px 22px rgba(0,0,0,.2)">
+          <img srcset="{{ app.icon }}" alt="" style="width:84px;height:84px;border-radius:20px;object-fit:cover;display:block;box-shadow:0 8px 22px rgba(0,0,0,.2)">
         </sc-if>
         <sc-if value="{{ appNoIcon }}" hint-placeholder-val="{{ true }}">
         <div style="width:78px;height:78px;border-radius:20px;background:linear-gradient(150deg,#3c3c3c,#0b0b0b);display:flex;align-items:center;justify-content:center;color:#fff;font-family:Montserrat,sans-serif;font-weight:700;font-size:36px;box-shadow:0 8px 22px rgba(0,0,0,.2)">{{ app.initial }}</div>
@@ -730,7 +728,7 @@ a{color:inherit}
       </div>
       <div style="border-radius:20px;overflow:hidden;border:1px solid rgba(0,0,0,.08)">
         <sc-if value="{{ appHasShots }}" hint-placeholder-val="{{ false }}">
-          <img src="{{ appShot0 }}" alt="" onClick="{{ openLb0 }}" style="width:100%;aspect-ratio:2880/1800;object-fit:cover;display:block;cursor:zoom-in">
+          <img srcset="{{ appShot0 }}" alt="" onClick="{{ openLb0 }}" style="width:100%;aspect-ratio:2880/1800;object-fit:cover;display:block;cursor:zoom-in">
         </sc-if>
         <sc-if value="{{ appNoShots }}" hint-placeholder-val="{{ true }}">
           <div style="min-height:340px;background:repeating-linear-gradient(45deg,#f5f5f5,#f5f5f5 14px,#ededed 14px,#ededed 28px);display:flex;align-items:center;justify-content:center">
@@ -744,7 +742,7 @@ a{color:inherit}
       <sc-for list="{{ shots }}" as="shot" hint-placeholder-count="3">
         <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.08)">
           <sc-if value="{{ shot.hasSrc }}" hint-placeholder-val="{{ false }}">
-            <img src="{{ shot.src }}" alt="" onClick="{{ shot.onClick }}" style="width:100%;aspect-ratio:2880/1800;object-fit:cover;display:block;cursor:zoom-in">
+            <img srcset="{{ shot.src }}" alt="" onClick="{{ shot.onClick }}" style="width:100%;aspect-ratio:2880/1800;object-fit:cover;display:block;cursor:zoom-in">
           </sc-if>
           <sc-if value="{{ shot.noSrc }}" hint-placeholder-val="{{ true }}">
             <div style="width:100%;aspect-ratio:2880/1800;background:repeating-linear-gradient(45deg,#f6f6f6,#f6f6f6 10px,#efefef 10px,#efefef 20px);display:flex;align-items:center;justify-content:center">
@@ -808,7 +806,7 @@ a{color:inherit}
 
     <sc-if value="{{ showLightbox }}" hint-placeholder-val="{{ false }}">
       <div onClick="{{ closeLb }}" style="position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.88);display:flex;align-items:center;justify-content:center;padding:40px">
-        <img src="{{ lbSrc }}" alt="" onClick="{{ stopClick }}" style="max-width:92%;max-height:88%;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6);display:block">
+        <img srcset="{{ lbSrc }}" alt="" onClick="{{ stopClick }}" style="max-width:92%;max-height:88%;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6);display:block">
         <button onClick="{{ prevLb }}" aria-label="Previous" style="position:absolute;left:18px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:none;cursor:pointer;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center" style-hover="background:rgba(255,255,255,.24)">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
         </button>
@@ -891,7 +889,7 @@ class Component extends DCLogic {
       features: ["Focus countdown timer", "Fully customizable Pomodoro timer", "High-precision stopwatch with lap support", "Interactive animated hourglass", "Live menu bar countdown", "Daily, monthly and yearly statistics", "Custom notification sounds", "Launch at login", "Native Apple Silicon performance", "Beautiful dark interface"],
       size: 12, wall: "linear-gradient(135deg,#6d28d9,#a855f7)", initial: "T",
       icon: "uploads/1024x1024bb.png",
-      shots: ["uploads/Focus_Timer_1 copy.webp", "uploads/Focus_Timer_2 copy.webp", "uploads/Focus_Timer_3 copy.webp", "uploads/Focus_Timer_4 copy.webp"],
+      shots: ["uploads/focus-timer-1.webp", "uploads/focus-timer-2.webp", "uploads/focus-timer-3.webp", "uploads/focus-timer-4.webp"],
       about: [
         "Time Tracker helps you stay productive with a collection of beautifully designed timing tools that live directly in your Mac's menu bar. Whether you're studying for an exam, working on an important project, writing code, or simply trying to stay on schedule, it gives you everything you need without getting in your way.",
         "Four timing modes: a clean Focus countdown timer with built-in or custom durations; a Pomodoro timer with configurable work sessions, short breaks and long breaks and automatic transitions; a stopwatch with precision down to one tenth of a second and lap support; and an interactive hourglass filled with realistic flowing sand — flip it with your mouse just like a real one.",
@@ -949,12 +947,22 @@ class Component extends DCLogic {
     window.addEventListener('resize', this._onResize);
     this._vwTimer = setInterval(() => this._syncVw(), 300);
     this._syncVw();
+    const initial = this.parseLocation();
+    if (initial) this.setState({ route: initial });
+    this._onPop = () => {
+      const r = this.parseLocation();
+      if (r) { if (r.name === "app") this.openApp(r.id, true); else if (r.name === "how") this.goHow(true); else if (r.name === "privacy") this.goPrivacy(true); else this.goSupport(true); }
+      else this.goHome(true);
+    };
+    window.addEventListener("popstate", this._onPop);
+    window.addEventListener("hashchange", this._onPop);
   }
   componentWillUnmount() {
     this._shineOn = false;
     clearTimeout(this._shineTimer);
     if (this._onResize) window.removeEventListener('resize', this._onResize);
     if (this._vwTimer) clearInterval(this._vwTimer);
+    if (this._onPop) { window.removeEventListener("popstate", this._onPop); window.removeEventListener("hashchange", this._onPop); }
   }
   passShine(el, dur, done) {
     if (!el) return;
@@ -966,11 +974,28 @@ class Component extends DCLogic {
     setTimeout(done, dur * 1000 + 20);
   }
 
-  openApp(id) { this.setState({ route: { name: "app", id }, openFaq: 0, menuOpen: false, lbIdx: -1 }); if (typeof window !== "undefined") window.scrollTo(0, 0); }
-  goHome() { this.setState({ route: { name: "home" }, menuOpen: false }); if (typeof window !== "undefined") window.scrollTo(0, 0); }
-  goHow() { this.setState({ route: { name: "how" }, menuOpen: false }); if (typeof window !== "undefined") window.scrollTo(0, 0); }
-  goPrivacy() { this.setState({ route: { name: "privacy" }, menuOpen: false }); if (typeof window !== "undefined") window.scrollTo(0, 0); }
-  goSupport() { this.setState({ route: { name: "support" }, menuOpen: false, openFaq: -1 }); if (typeof window !== "undefined") window.scrollTo(0, 0); }
+  syncUrl(path, skip) {
+    if (skip || typeof window === "undefined") return;
+    try { history.pushState({}, "", path); } catch (e) { try { location.hash = path; } catch (e2) {} }
+  }
+  parseLocation() {
+    try {
+      let p = location.hash && location.hash.indexOf("#/") === 0 ? location.hash.slice(1) : location.pathname;
+      p = p.replace(/\/+$/, "").replace(/\/index\.html$/, "").replace(/\.html$/, "");
+      const seg = p.split("/").filter(Boolean).pop() || "";
+      if (!seg) return null;
+      if (seg === "support") return { name: "support" };
+      if (seg === "privacy") return { name: "privacy" };
+      if (seg === "how-it-works") return { name: "how" };
+      if (this.APPS.some(a => a.id === seg)) return { name: "app", id: seg };
+      return null;
+    } catch (e) { return null; }
+  }
+  openApp(id, skipUrl) { this.setState({ route: { name: "app", id }, openFaq: 0, menuOpen: false, lbIdx: -1 }); this.syncUrl("/" + id, skipUrl); if (typeof window !== "undefined") window.scrollTo(0, 0); }
+  goHome(skipUrl) { this.setState({ route: { name: "home" }, menuOpen: false }); this.syncUrl("/", skipUrl); if (typeof window !== "undefined") window.scrollTo(0, 0); }
+  goHow(skipUrl) { this.setState({ route: { name: "how" }, menuOpen: false }); this.syncUrl("/how-it-works", skipUrl); if (typeof window !== "undefined") window.scrollTo(0, 0); }
+  goPrivacy(skipUrl) { this.setState({ route: { name: "privacy" }, menuOpen: false }); this.syncUrl("/privacy", skipUrl); if (typeof window !== "undefined") window.scrollTo(0, 0); }
+  goSupport(skipUrl) { this.setState({ route: { name: "support" }, menuOpen: false, openFaq: -1 }); this.syncUrl("/support", skipUrl); if (typeof window !== "undefined") window.scrollTo(0, 0); }
   setQuery(v) { this.setState(s => ({ query: v, route: s.route.name === "home" ? s.route : { name: "home" } })); }
   setCategory(c) { this.setState({ category: c }); }
   setLayout(l) { this.setState({ layout: l }); }
@@ -1026,6 +1051,15 @@ class Component extends DCLogic {
     const aboutParas = current && current.about ? current.about : [];
 
     const vw = this.state.vw;
+    try {
+      const rn = this.state.route.name;
+      const t = rn === "app" && current ? current.name + " for Mac — UsefulApps.io"
+        : rn === "support" ? "Support — UsefulApps.io"
+        : rn === "privacy" ? "Privacy Policy — UsefulApps.io"
+        : rn === "how" ? "How it works — UsefulApps.io"
+        : "UsefulApps.io — macOS Productivity App Bundle";
+      if (typeof document !== "undefined" && document.title !== t) document.title = t;
+    } catch (e) {}
     const isCompact = vw < 1024;
     const isMobile = vw < 640;
 
