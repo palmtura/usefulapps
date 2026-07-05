@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" rx="22" fill="#0a0a0a"/>
+  <rect x="30" y="30" width="40" height="40" rx="11" fill="url(#g)"/>
+  <text x="50" y="58" font-family="Montserrat,sans-serif" font-size="22" font-weight="800" fill="#fff" text-anchor="middle">U</text>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f97316"/>
+      <stop offset="0.5" stop-color="#ef4444"/>
+      <stop offset="1" stop-color="#9333ea"/>
+    </linearGradient>
+  </defs>
+</svg>
+</template>
+<x-dc>
+<helmet data-dc-atomics="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<meta name="ext-resource-dependency" content="uploads/1024x1024bb.png">
+<meta name="ext-resource-dependency" content="uploads/Focus_Timer_1 copy.webp">
+<meta name="ext-resource-dependency" content="uploads/Focus_Timer_2 copy.webp">
+<meta name="ext-resource-dependency" content="uploads/Focus_Timer_3 copy.webp">
+<meta name="ext-resource-dependency" content="uploads/Focus_Timer_4 copy.webp">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#fff;color:#0a0a0a;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+input{font-family:inherit}
+button{font-family:inherit}
+a{color:inherit}
+::selection{background:rgba(147,51,234,.18)}
+@keyframes gradientFlow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes floatA{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-16px) rotate(-8deg)}}
+@keyframes floatB{0%,100%{transform:translateY(0) rotate(7deg)}50%{transform:translateY(-13px) rotate(7deg)}}
+@keyframes floatC{0%,100%{transform:translateY(0) rotate(11deg)}50%{transform:translateY(-19px) rotate(11deg)}}
+@keyframes floatD{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-11px) rotate(-5deg)}}
+@keyframes shine{0%{background-position:150% 0}14%{background-position:-150% 0}100%{background-position:-150% 0}}
+@keyframes blobA{0%,100%{transform:translate(-16%,-8%) scale(1)}50%{transform:translate(14%,10%) scale(1.18)}}
+@keyframes blobB{0%,100%{transform:translate(12%,14%) scale(1.08)}50%{transform:translate(-14%,-10%) scale(.94)}}
+@keyframes blobC{0%,100%{transform:translate(0%,0%) scale(1)}50%{transform:translate(-12%,16%) scale(1.22)}}
+@keyframes chevFlow{0%{opacity:.15;transform:translateX(-5px)}45%{opacity:1;transform:translateX(1px)}100%{opacity:.15;transform:translateX(6px)}}
+@keyframes tilePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+@keyframes tilePulseLogo{0%,100%{transform:scale(.68)}50%{transform:scale(1.12)}}
+@keyframes softPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes badgePop{0%,18%{transform:scale(0);opacity:0}30%,72%{transform:scale(1);opacity:1}84%,100%{transform:scale(0);opacity:0}}
+@keyframes rippleOut{0%{transform:scale(.55);opacity:.85}100%{transform:scale(1.75);opacity:0}}
+@keyframes dashMove{to{stroke-dashoffset:-320}}
+@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:1;transform:scale(1.2)}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#fff">
+
+  <sc-if value="{{ showAnnouncement }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;padding:9px 16px;background:#0a0a0a;color:#fff;font-size:13px;font-weight:500;text-align:center">
+      <span>Launch offer — one lifetime license unlocks all 10 apps.</span>
+      <span style="text-decoration:line-through;opacity:.5">$79</span>
+      <span style="font-weight:700">$29</span>
+    </div>
+  </sc-if>
+
+  <header style="position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:13px 26px;background:rgba(255,255,255,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.08)">
+    <div onClick="{{ goHome }}" style="display:flex;align-items:center;gap:5px;cursor:pointer;font-family:Montserrat,sans-serif;font-weight:800;font-size:21px;letter-spacing:-.02em">
+      <div aria-hidden="true" style="width:30px;height:30px;border-radius:8px;background:#fafafa;border:1px solid rgba(0,0,0,.08);display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:5px;flex:none">
+        <div style="border-radius:3px;background:linear-gradient(135deg,#f97316,#ef4444);animation:tilePulseLogo 2.4s ease-in-out infinite"></div>
+        <div style="border-radius:3px;background:linear-gradient(135deg,#ef4444,#9333ea);animation:tilePulseLogo 2.4s ease-in-out infinite;animation-delay:.3s"></div>
+        <div style="border-radius:3px;background:linear-gradient(135deg,#9333ea,#4f46e5);animation:tilePulseLogo 2.4s ease-in-out infinite;animation-delay:.6s"></div>
+        <div style="border-radius:3px;background:linear-gradient(135deg,#f59e0b,#ef4444);animation:tilePulseLogo 2.4s ease-in-out infinite;animation-delay:.9s"></div>
+      </div>
+      <span style="display:flex;align-items:baseline">
+      <span style="color:#0a0a0a">Useful</span><span style="background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">Apps</span><span style="font-size:14px;font-weight:700;color:rgba(0,0,0,.4);margin-left:2px">.io</span>
+      </span>
+    </div>
+    <div style="flex:1;min-width:180px;position:relative;display:flex;align-items:center">
+      <span style="position:absolute;left:14px;display:flex;pointer-events:none"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,.4)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4-4"></path></svg></span>
+      <input value="{{ query }}" onInput="{{ onQueryInput }}" placeholder="Search apps…" style="width:100%;padding:10px 14px 10px 40px;border:1px solid rgba(0,0,0,.12);border-radius:11px;font-size:14px;outline:none;background:#fff" style-focus="border-color:#9333ea;box-shadow:0 0 0 3px rgba(147,51,234,.1)">
+    </div>
+    <sc-if value="{{ showDesktopNav }}" hint-placeholder-val="{{ true }}">
+      <div style="display:contents">
+        <nav style="display:flex;align-items:center;gap:20px;font-size:14px;font-weight:600">
+          <a href="#apps" style="text-decoration:none">Apps</a>
+          <span onClick="{{ goHow }}" style="cursor:pointer">How it works</span>
+          <a href="#benefits" style="text-decoration:none">Benefits</a>
+          <a href="#pricing" style="text-decoration:none">Pricing</a>
+          <a href="#faq" style="text-decoration:none">FAQ</a>
+        </nav>
+        <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;animation:gradientFlow 6s ease infinite;color:#fff;box-shadow:0 4px 14px rgba(147,51,234,.22)" style-hover="filter:brightness(1.06)">
+          <svg width="14" height="17" viewBox="0 0 384 512" fill="#fff" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg>
+          <span>Get it — $29</span>
+        </a>
+      </div>
+    </sc-if>
+    <sc-if value="{{ isCompact }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ toggleMenu }}" aria-label="Menu" style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:11px;border:1px solid rgba(0,0,0,.12);background:#fff;cursor:pointer" style-hover="background:#f7f7f7">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </button>
+    </sc-if>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;right:16px;top:calc(100% + 8px);min-width:240px;background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:16px;box-shadow:0 18px 44px rgba(0,0,0,.14);padding:10px;display:flex;flex-direction:column;z-index:60">
+        <a href="#apps" onClick="{{ closeMenu }}" style="padding:11px 14px;border-radius:10px;text-decoration:none;font-size:15px;font-weight:600" style-hover="background:#f5f5f5">Apps</a>
+        <span onClick="{{ menuGoHow }}" style="padding:11px 14px;border-radius:10px;cursor:pointer;font-size:15px;font-weight:600" style-hover="background:#f5f5f5">How it works</span>
+        <a href="#benefits" onClick="{{ closeMenu }}" style="padding:11px 14px;border-radius:10px;text-decoration:none;font-size:15px;font-weight:600" style-hover="background:#f5f5f5">Benefits</a>
+        <a href="#pricing" onClick="{{ closeMenu }}" style="padding:11px 14px;border-radius:10px;text-decoration:none;font-size:15px;font-weight:600" style-hover="background:#f5f5f5">Pricing</a>
+        <a href="#faq" onClick="{{ closeMenu }}" style="padding:11px 14px;border-radius:10px;text-decoration:none;font-size:15px;font-weight:600" style-hover="background:#f5f5f5">FAQ</a>
+        <div style="height:1px;background:rgba(0,0,0,.08);margin:8px 6px"></div>
+        <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:8px;margin:4px;padding:11px 18px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;animation:gradientFlow 6s ease infinite;color:#fff;box-shadow:0 4px 14px rgba(147,51,234,.22)" style-hover="filter:brightness(1.06)">
+          <svg width="14" height="17" viewBox="0 0 384 512" fill="#fff" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg>
+          <span>Get it — $29</span>
+        </a>
+      </div>
+    </sc-if>
+  </header>
+
+  <!-- ============ HOME ============ -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <section data-screen-label="Hero" style="position:relative;max-width:1040px;margin:0 auto;padding:48px 28px;text-align:center;min-height:calc(100vh - 130px);display:flex;flex-direction:column;justify-content:center">
+
+      <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none">
+
+        <div style="position:absolute;left:2%;top:16%;width:86px;height:86px">
+          <div style="position:absolute;inset:0;animation:floatA 7s ease-in-out infinite;pointer-events:auto">
+            <div style="position:absolute;inset:0;border-radius:24%;overflow:hidden;box-shadow:0 12px 26px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.22);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease" style-hover="transform:scale(1.18);box-shadow:0 18px 36px rgba(147,51,234,.42),inset 0 1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.22)">
+              <img src="uploads/_icon_preview.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
+              <div style="position:absolute;inset:0;border-radius:24%;background:linear-gradient(155deg,rgba(255,255,255,.4),rgba(255,255,255,0) 45%);pointer-events:none"></div>
+              <div style="position:absolute;inset:0;border-radius:24%;background:linear-gradient(115deg,transparent 36%,rgba(255,255,255,.4) 48%,rgba(255,255,255,.06) 54%,transparent 68%);background-size:250% 100%;background-repeat:no-repeat;background-position:150% 0;pointer-events:none" data-shine="1"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position:absolute;right:3%;top:12%;width:94px;height:94px">
+          <div style="position:absolute;inset:0;animation:floatB 8s ease-in-out infinite;animation-delay:-1.5s;pointer-events:auto">
+            <div style="position:absolute;inset:0;border-radius:24%;overflow:hidden;box-shadow:0 12px 26px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.22);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease" style-hover="transform:scale(1.18);box-shadow:0 18px 36px rgba(147,51,234,.42),inset 0 1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.22)">
+              <img src="uploads/io.hexman.xiconchanger_icon.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
+              <div style="position:absolute;inset:0;border-radius:24%;background:linear-gradient(155deg,rgba(255,255,255,.4),rgba(255,255,255,0) 45%);pointer-events:none"></div>
+              <div style="position:absolute;inset:0;border-radius:24%;background:linear-gradient(115deg,transparent 36%,rgba(255,255,255,.4) 48%,rgba(255,255,255,.06) 54%,transparent 68%);background-size:250% 100%;background-repeat:no-repeat;background-position:150% 0;pointer-events:none" data-shine="1"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position:absolute;left:{{ posArrowsX }};top:{{ posArrowsY }};width:74px;height:74px">
+          <div style="position:absolute;inset:0;animation:floatC 9s ease-in-out infinite;animation-delay:-3s;pointer-events:auto">
+            <div style="position:absolute;inset:0;border-radius:24%;overflow:hidden;box-shadow:0 12px 26px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.22);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease" style-hover="transform:scale(1.18);box-shadow:0 18px 36px rgba(147,51,234,.42),inset 0 1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.22)">
+              <img src="uploads/bunte-und-hochwertige-vektor-internet-daten-logo_557339-484.avif" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
+              <div style="position:absolute;inset:0;border-radius:24%;background:linear-gradient(155deg,rgba(255,255,255,.4),rgba(255,255,255,0) 45%);pointer-events:none"></div>
+              <div style="position:absolute;inset:0;border-radius:24%;background:linear-gradient(115deg,transparent 36%,rgba(255,255,255,.4) 48%,rgba(255,255,255,.06) 54%,transparent 68%);background-size:250% 100%;background-repeat:no-repeat;background-position:150% 0;pointer-events:none" data-shine="1"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position:absolute;right:{{ posBurgerX }};top:{{ posBurgerY }};width:80px;height:80px">
+          <div style="position:absolute;inset:0;animation:floatD 7.5s ease-in-out infinite;animation-delay:-2s;pointer-events:auto">
+            <div style="position:absolute;inset:0;border-radius:24%;overflow:hidden;box-shadow:0 12px 26px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.22);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease" style-hover="transform:scale(1.18);box-shadow:0 18px 36px rgba(147,51,234,.42),inset 0 1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.22)">
+              <img src="uploads/Snackr-icon.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
+              <div style="position:absolute;inset:0;border-radius:24%;background:linear-gradient(155deg,rgba(255,255,255,.4),rgba(255,255,255,0) 45%);pointer-events:none"></div>
+              <div style="position:absolute;inset:0;border-radius:24%;background:linear-gradient(115deg,transparent 36%,rgba(255,255,255,.4) 48%,rgba(255,255,255,.06) 54%,transparent 68%);background-size:250% 100%;background-repeat:no-repeat;background-position:150% 0;pointer-events:none" data-shine="1"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position:absolute;left:{{ posBoltX }};top:40%;width:58px;height:58px">
+          <div style="position:absolute;inset:0;animation:floatC 8.5s ease-in-out infinite;animation-delay:-4s;pointer-events:auto">
+            <div style="position:absolute;inset:0;border-radius:24%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#f97316,#ef4444);box-shadow:0 12px 26px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.22);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease" style-hover="transform:scale(1.18);box-shadow:0 18px 36px rgba(147,51,234,.42),inset 0 1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.22)">
+              <svg width="46%" height="46%" viewBox="0 0 24 24" fill="#fff"><path d="M13 2L4.5 13.5H10l-1 8.5 9.5-13H12l1-7z"></path></svg>
+              <div style="position:absolute;inset:0;border-radius:24%;background:linear-gradient(155deg,rgba(255,255,255,.45),rgba(255,255,255,0) 45%);pointer-events:none"></div>
+              <div style="position:absolute;inset:0;border-radius:24%;background:linear-gradient(115deg,transparent 36%,rgba(255,255,255,.4) 48%,rgba(255,255,255,.06) 54%,transparent 68%);background-size:250% 100%;background-repeat:no-repeat;background-position:150% 0;pointer-events:none" data-shine="1"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position:absolute;right:9%;top:38%;width:56px;height:56px">
+          <div style="position:absolute;inset:0;animation:floatD 8s ease-in-out infinite;animation-delay:-0.8s;pointer-events:auto">
+            <div style="position:absolute;inset:0;border-radius:24%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#22c55e,#0ea5e9);box-shadow:0 12px 26px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.22);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease" style-hover="transform:scale(1.18);box-shadow:0 18px 36px rgba(147,51,234,.42),inset 0 1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.22)">
+              <svg width="46%" height="46%" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>
+              <div style="position:absolute;inset:0;border-radius:24%;background:linear-gradient(155deg,rgba(255,255,255,.45),rgba(255,255,255,0) 45%);pointer-events:none"></div>
+              <div style="position:absolute;inset:0;border-radius:24%;background:linear-gradient(115deg,transparent 36%,rgba(255,255,255,.4) 48%,rgba(255,255,255,.06) 54%,transparent 68%);background-size:250% 100%;background-repeat:no-repeat;background-position:150% 0;pointer-events:none" data-shine="1"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position:absolute;left:23%;top:9%;width:52px;height:52px">
+          <div style="position:absolute;inset:0;animation:floatB 8.5s ease-in-out infinite;animation-delay:-2.4s;pointer-events:auto">
+            <div style="position:absolute;inset:0;border-radius:24%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#6366f1,#9333ea);box-shadow:0 12px 26px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.22);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease" style-hover="transform:scale(1.18);box-shadow:0 18px 36px rgba(147,51,234,.42),inset 0 1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.22)">
+              <svg width="44%" height="44%" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6z"></path><path d="M9 10h6M9 14h6"></path></svg>
+              <div style="position:absolute;inset:0;border-radius:24%;background:linear-gradient(155deg,rgba(255,255,255,.45),rgba(255,255,255,0) 45%);pointer-events:none"></div>
+              <div style="position:absolute;inset:0;border-radius:24%;background:linear-gradient(115deg,transparent 36%,rgba(255,255,255,.4) 48%,rgba(255,255,255,.06) 54%,transparent 68%);background-size:250% 100%;background-repeat:no-repeat;background-position:150% 0;pointer-events:none" data-shine="1"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position:absolute;right:{{ posCheckX }};top:{{ posCheckY }};width:50px;height:50px">
+          <div style="position:absolute;inset:0;animation:floatA 9s ease-in-out infinite;animation-delay:-3.6s;pointer-events:auto">
+            <div style="position:absolute;inset:0;border-radius:24%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#3c3c3c,#0a0a0a);box-shadow:0 12px 26px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.35),inset 0 0 0 1px rgba(255,255,255,.14);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease" style-hover="transform:scale(1.18);box-shadow:0 18px 36px rgba(147,51,234,.42),inset 0 1px 0 rgba(255,255,255,.35),inset 0 0 0 1px rgba(255,255,255,.14)">
+              <svg width="46%" height="46%" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+              <div style="position:absolute;inset:0;border-radius:24%;background:linear-gradient(155deg,rgba(255,255,255,.3),rgba(255,255,255,0) 45%);pointer-events:none"></div>
+              <div style="position:absolute;inset:0;border-radius:24%;background:linear-gradient(115deg,transparent 36%,rgba(255,255,255,.4) 48%,rgba(255,255,255,.06) 54%,transparent 68%);background-size:250% 100%;background-repeat:no-repeat;background-position:150% 0;pointer-events:none" data-shine="1"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="position:relative;z-index:2;pointer-events:none">
+      <div style="font-size:14px;font-weight:700;letter-spacing:.02em;color:rgba(0,0,0,.45)">macOS Productivity App Bundle</div>
+      <h1 style="font-family:Montserrat,sans-serif;font-weight:800;font-size:{{ heroH1Size }};line-height:1.06;letter-spacing:-.03em;margin:16px 0 0">
+        <span>macOS App Bundles{{ heroDash }}</span><br><span style="background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">Just $29 each.</span>
+      </h1>
+      <p style="max-width:560px;margin:22px auto 0;font-size:19px;line-height:1.55;color:rgba(0,0,0,.55)">Mac App Bundles — buy once, own forever.</p>
+      <div style="display:flex;align-items:baseline;justify-content:center;gap:12px;margin:30px 0 24px">
+        
+        
+        
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+        <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener" style="pointer-events:auto;display:inline-flex;align-items:center;gap:11px;padding:16px 30px;border-radius:999px;text-decoration:none;font-weight:700;font-size:17px;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;animation:gradientFlow 6s ease infinite;color:#fff;box-shadow:0 10px 30px rgba(147,51,234,.28)" style-hover="filter:brightness(1.06)">
+          <svg width="18" height="21" viewBox="0 0 384 512" fill="#fff" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg>
+          <span>Get the Bundle on the App Store</span>
+        </a>
+        <span style="font-size:13px;color:rgba(0,0,0,.4)">One-Time Purchase + No Subscription + Lifetime Updates.</span>
+      </div>
+      </div>
+    </section>
+
+    <section id="apps" data-screen-label="All Apps" style="max-width:1180px;margin:0 auto;padding:40px 28px 80px">
+      <h2 style="font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(24px,3.4vw,34px);letter-spacing:-.02em;text-align:center;margin:0 0 26px">All <span style="background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">Apps</span></h2>
+
+      <div style="position:relative;max-width:640px;margin:0 auto 24px">
+        <span style="position:absolute;left:18px;top:50%;transform:translateY(-50%);display:flex;pointer-events:none"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,.4)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4-4"></path></svg></span>
+        <input value="{{ query }}" onInput="{{ onQueryInput }}" placeholder="Search apps…" style="width:100%;padding:16px 18px 16px 50px;border:1px solid rgba(0,0,0,.12);border-radius:14px;font-size:16px;outline:none;background:#fff" style-focus="border-color:#9333ea;box-shadow:0 0 0 4px rgba(147,51,234,.1)">
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:26px">
+        <sc-for list="{{ chips }}" as="chip" hint-placeholder-count="6">
+          <button onClick="{{ chip.onClick }}" style="{{ chip.style }}">{{ chip.name }}</button>
+        </sc-for>
+      </div>
+
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:22px">
+        <div style="font-size:14px;color:rgba(0,0,0,.5)"><span style="font-weight:700;color:#0a0a0a">{{ resultCount }}</span> apps · {{ categoryLabel }}</div>
+        <div style="display:flex;gap:4px;padding:4px;background:#f2f2f2;border-radius:12px">
+          <sc-for list="{{ layouts }}" as="seg" hint-placeholder-count="3">
+            <button onClick="{{ seg.onClick }}" style="{{ seg.style }}">{{ seg.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+
+      <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+        <div style="text-align:center;padding:80px 20px;color:rgba(0,0,0,.45)">
+          <div style="font-family:Montserrat,sans-serif;font-weight:700;font-size:20px;color:#0a0a0a">No apps match your search</div>
+          <p style="margin-top:8px">Try a different keyword or category.</p>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isGrid }}" hint-placeholder-val="{{ true }}">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:22px">
+          <sc-for list="{{ filtered }}" as="card" hint-placeholder-count="4">
+            <div onClick="{{ card.onClick }}" style="cursor:pointer;border:1px solid rgba(0,0,0,.08);border-radius:10px;overflow:hidden;background:#fff;transition:transform .18s ease,box-shadow .18s ease,border-color .18s" style-hover="transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.1);border-color:rgba(0,0,0,.14)">
+              <div style="position:relative;aspect-ratio:16/9;overflow:hidden;background:{{ card.wall }}">
+                <sc-if value="{{ card.hasShot }}" hint-placeholder-val="{{ false }}">
+                  <img src="{{ card.shot0 }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+                </sc-if>
+                <sc-if value="{{ card.noShot }}" hint-placeholder-val="{{ true }}">
+                <div style="position:absolute;inset:0">
+                <div style="position:absolute;inset:0;background:radial-gradient(120% 90% at 18% 0%,rgba(255,255,255,.3),transparent 55%)"></div>
+                <div style="position:absolute;left:0;top:0;right:0;height:16px;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:space-between;padding:0 10px">
+                  <span style="font-size:8px;font-weight:700;color:rgba(255,255,255,.9)">{{ card.name }}</span>
+                  <span style="display:flex;gap:5px;align-items:center">
+                    <span style="width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.75)"></span>
+                    <span style="width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.75)"></span>
+                    <span style="font-size:8px;font-weight:600;color:rgba(255,255,255,.85)">9:41</span>
+                  </span>
+                </div>
+                <div style="position:absolute;left:50%;top:55%;transform:translate(-50%,-50%);width:66%;border-radius:12px;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);box-shadow:0 20px 44px rgba(0,0,0,.3);overflow:hidden">
+                  <div style="display:flex;align-items:center;gap:5px;padding:8px 11px;border-bottom:1px solid rgba(0,0,0,.07)">
+                    <span style="width:8px;height:8px;border-radius:50%;background:#ff5f57"></span>
+                    <span style="width:8px;height:8px;border-radius:50%;background:#febc2e"></span>
+                    <span style="width:8px;height:8px;border-radius:50%;background:#28c840"></span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:13px;padding:13px 16px">
+                    <div style="flex:none;width:42px;height:42px;border-radius:12px;background:linear-gradient(150deg,#3c3c3c,#0b0b0b);display:flex;align-items:center;justify-content:center;color:#fff;font-family:Montserrat,sans-serif;font-weight:700;font-size:18px;box-shadow:0 4px 10px rgba(0,0,0,.25)">{{ card.initial }}</div>
+                    <div style="flex:1;display:flex;flex-direction:column;gap:6px;min-width:0">
+                      <div style="height:8px;border-radius:4px;background:rgba(0,0,0,.14);width:72%"></div>
+                      <div style="height:8px;border-radius:4px;background:rgba(0,0,0,.09);width:55%"></div>
+                      <div style="height:8px;border-radius:4px;background:rgba(0,0,0,.05);width:64%"></div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </sc-if>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:14px;padding:18px 20px 20px">
+                <div style="flex:1;min-width:0">
+                  <div style="display:flex;align-items:center;gap:10px;flex-wrap:nowrap">
+                    <span style="font-family:Montserrat,sans-serif;font-weight:700;font-size:{{ cardNameSize }};white-space:nowrap">{{ card.name }}</span>
+                    <span style="font-size:10px;font-weight:700;color:rgba(0,0,0,.45);text-transform:uppercase;letter-spacing:.06em;padding:3px 9px;border:1px solid rgba(0,0,0,.12);border-radius:999px;white-space:nowrap">{{ card.category }}</span>
+                  </div>
+                  <div style="font-size:14px;color:rgba(0,0,0,.55);margin-top:6px;line-height:1.45">{{ card.tagline }}</div>
+                </div>
+                <svg style="flex:none;margin-top:4px" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isList }}" hint-placeholder-val="{{ false }}">
+        <div style="border:1px solid rgba(0,0,0,.08);border-radius:16px;overflow:hidden">
+          <sc-for list="{{ filtered }}" as="card" hint-placeholder-count="6">
+            <div onClick="{{ card.onClick }}" style="display:flex;align-items:center;gap:16px;padding:15px 18px;border-bottom:1px solid rgba(0,0,0,.06);cursor:pointer" style-hover="background:#fafafa">
+              <sc-if value="{{ card.hasIcon }}" hint-placeholder-val="{{ false }}">
+                <img src="{{ card.icon }}" alt="" style="flex:none;width:44px;height:44px;border-radius:12px;object-fit:cover;display:block">
+              </sc-if>
+              <sc-if value="{{ card.noIcon }}" hint-placeholder-val="{{ true }}">
+              <div style="flex:none;width:44px;height:44px;border-radius:12px;background:linear-gradient(150deg,#3c3c3c,#0b0b0b);display:flex;align-items:center;justify-content:center;color:#fff;font-family:Montserrat,sans-serif;font-weight:700;font-size:19px">{{ card.initial }}</div>
+              </sc-if>
+              <div style="flex:1;min-width:0">
+                <div style="font-family:Montserrat,sans-serif;font-weight:700;font-size:16px">{{ card.name }}</div>
+                <div style="font-size:13px;color:rgba(0,0,0,.5);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ card.tagline }}</div>
+              </div>
+              <div style="flex:none;font-size:11px;font-weight:600;color:rgba(0,0,0,.4);text-transform:uppercase;letter-spacing:.05em">{{ card.category }}</div>
+              <svg style="flex:none" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isGallery }}" hint-placeholder-val="{{ false }}">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px">
+          <sc-for list="{{ filtered }}" as="card" hint-placeholder-count="6">
+            <div onClick="{{ card.onClick }}" style="cursor:pointer;border:1px solid rgba(0,0,0,.08);border-radius:18px;overflow:hidden;background:#fff;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.1)">
+              <div style="height:152px;background:repeating-linear-gradient(45deg,#f5f5f5,#f5f5f5 12px,#ededed 12px,#ededed 24px);display:flex;align-items:center;justify-content:center">
+                <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(0,0,0,.35);letter-spacing:.05em">{{ card.name }} — preview</span>
+              </div>
+              <div style="padding:18px;display:flex;gap:14px;align-items:flex-start">
+                <div style="flex:none;width:46px;height:46px;border-radius:13px;background:linear-gradient(150deg,#3c3c3c,#0b0b0b);display:flex;align-items:center;justify-content:center;color:#fff;font-family:Montserrat,sans-serif;font-weight:700;font-size:20px">{{ card.initial }}</div>
+                <div style="min-width:0">
+                  <div style="font-family:Montserrat,sans-serif;font-weight:700;font-size:16px">{{ card.name }}</div>
+                  <div style="font-size:11px;font-weight:600;color:rgba(0,0,0,.4);text-transform:uppercase;letter-spacing:.05em;margin-top:3px">{{ card.category }}</div>
+                  <div style="font-size:13px;color:rgba(0,0,0,.55);margin-top:7px;line-height:1.45">{{ card.tagline }}</div>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+    </section>
+
+    <section id="pricing" data-screen-label="Get the bundle CTA" style="max-width:1180px;margin:0 auto;padding:10px 28px 30px">
+      <div style="position:relative;border-radius:28px;overflow:hidden;background:#0a0a0a;min-height:420px;display:flex;align-items:center;justify-content:center">
+        <div style="position:absolute;left:-8%;top:-35%;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.55),transparent 62%);filter:blur(70px);animation:blobA 14s ease-in-out infinite"></div>
+        <div style="position:absolute;right:-10%;bottom:-40%;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(147,51,234,.6),transparent 62%);filter:blur(70px);animation:blobB 17s ease-in-out infinite"></div>
+        <div style="position:absolute;left:32%;top:-10%;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(239,68,68,.45),transparent 62%);filter:blur(60px);animation:blobC 20s ease-in-out infinite"></div>
+        <div style="position:relative;z-index:2;padding:70px 40px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center">
+          <h2 style="font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(30px,5vw,52px);color:#fff;letter-spacing:-.02em;line-height:1.08;margin:0">Get the app bundle now.</h2>
+          <div style="display:flex;align-items:baseline;justify-content:center;gap:12px;margin:22px 0 24px">
+            <span style="font-size:20px;text-decoration:line-through;color:rgba(255,255,255,.4);font-weight:600">$79</span>
+            <span style="font-family:Montserrat,sans-serif;font-weight:800;font-size:46px;line-height:1;color:#fff">$29</span>
+            <span style="font-size:15px;color:rgba(255,255,255,.55);font-weight:600">/ lifetime</span>
+          </div>
+          <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:11px;padding:16px 30px;border-radius:999px;text-decoration:none;font-weight:700;font-size:17px;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;animation:gradientFlow 6s ease infinite;color:#fff;box-shadow:0 10px 30px rgba(147,51,234,.4)" style-hover="filter:brightness(1.06)">
+            <svg width="18" height="21" viewBox="0 0 384 512" fill="#fff" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg>
+            <span>Get the Bundle on the App Store</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="How it works (home)" style="max-width:1180px;margin:0 auto;padding:30px 28px 40px">
+      <h2 style="font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(26px,4vw,40px);text-align:center;letter-spacing:-.02em;margin:0 0 34px">How it <span style="background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">works</span></h2>
+      <div style="display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:16px">
+
+        <div style="flex:1 1 260px;max-width:400px;border:1px solid rgba(0,0,0,.08);border-radius:22px;background:#fff;padding:34px 26px;text-align:center;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.1)">
+          <div style="position:relative;height:150px;display:flex;align-items:center;justify-content:center">
+            <div style="position:relative;width:118px;height:118px;border-radius:26px;background:#fafafa;border:1px solid rgba(0,0,0,.07);display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px">
+              <div style="border-radius:10px;background:linear-gradient(135deg,#f97316,#ef4444);animation:tilePulse 2.4s ease-in-out infinite"></div>
+              <div style="border-radius:10px;background:linear-gradient(135deg,#ef4444,#9333ea);animation:tilePulse 2.4s ease-in-out infinite;animation-delay:.3s"></div>
+              <div style="border-radius:10px;background:linear-gradient(135deg,#9333ea,#4f46e5);animation:tilePulse 2.4s ease-in-out infinite;animation-delay:.6s"></div>
+              <div style="border-radius:10px;background:linear-gradient(135deg,#f59e0b,#ef4444);animation:tilePulse 2.4s ease-in-out infinite;animation-delay:.9s"></div>
+              <div style="position:absolute;top:-9px;right:-9px;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#f97316,#ef4444,#9333ea);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(147,51,234,.4);animation:badgePop 3.8s ease-in-out infinite"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></div>
+            </div>
+          </div>
+          <div style="margin-top:18px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">Step 1</div>
+          <div style="font-family:Montserrat,sans-serif;font-weight:700;font-size:21px;margin-top:8px">Select your bundle</div>
+          <p style="font-size:15px;line-height:1.55;color:rgba(0,0,0,.55);margin:10px 0 0">Pick the 10-app bundle — every app included, nothing to configure.</p>
+        </div>
+
+        <div aria-hidden="true" style="{{ howArrowWrapStyle }}">
+          <div style="{{ howArrowGroupStyle }}">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="animation:chevFlow 1.8s ease-in-out infinite"><path d="M9 5l7 7-7 7"></path></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="animation:chevFlow 1.8s ease-in-out infinite;animation-delay:.25s;margin-left:-8px"><path d="M9 5l7 7-7 7"></path></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="animation:chevFlow 1.8s ease-in-out infinite;animation-delay:.5s;margin-left:-8px"><path d="M9 5l7 7-7 7"></path></svg>
+          </div>
+        </div>
+
+        <div style="flex:1 1 260px;max-width:400px;border:1px solid rgba(0,0,0,.08);border-radius:22px;background:#fff;padding:34px 26px;text-align:center;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.1)">
+          <div style="position:relative;height:150px;display:flex;align-items:center;justify-content:center">
+            <div style="position:absolute;width:96px;height:96px;border-radius:50%;border:2px solid rgba(147,51,234,.55);animation:rippleOut 2.6s ease-out infinite"></div>
+            <div style="position:absolute;width:96px;height:96px;border-radius:50%;border:2px solid rgba(249,115,22,.55);animation:rippleOut 2.6s ease-out infinite;animation-delay:1.3s"></div>
+            <div style="position:relative;width:86px;height:86px;border-radius:50%;background:linear-gradient(150deg,#2c2c2c,#0a0a0a);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,.28);animation:softPulse 4s ease-in-out infinite">
+              <svg width="30" height="36" viewBox="0 0 384 512" fill="#fff" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg>
+            </div>
+          </div>
+          <div style="margin-top:18px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">Step 2</div>
+          <div style="font-family:Montserrat,sans-serif;font-weight:700;font-size:21px;margin-top:8px">Buy via the App Store</div>
+          <p style="font-size:15px;line-height:1.55;color:rgba(0,0,0,.55);margin:10px 0 0">One tap, $29 once — secure Apple checkout, instantly on all your Macs.</p>
+        </div>
+
+        <div aria-hidden="true" style="{{ howArrowWrapStyle }}">
+          <div style="{{ howArrowGroupStyle }}">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="animation:chevFlow 1.8s ease-in-out infinite"><path d="M9 5l7 7-7 7"></path></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="animation:chevFlow 1.8s ease-in-out infinite;animation-delay:.25s;margin-left:-8px"><path d="M9 5l7 7-7 7"></path></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="animation:chevFlow 1.8s ease-in-out infinite;animation-delay:.5s;margin-left:-8px"><path d="M9 5l7 7-7 7"></path></svg>
+          </div>
+        </div>
+
+        <div style="flex:1 1 260px;max-width:400px;border:1px solid rgba(0,0,0,.08);border-radius:22px;background:#fff;padding:34px 26px;text-align:center;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.1)">
+          <div style="position:relative;height:150px;display:flex;align-items:center;justify-content:center">
+            <svg width="160" height="100" viewBox="0 0 120 70">
+              <defs>
+                <linearGradient id="infGradHome" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#f97316"></stop>
+                  <stop offset="0.5" stop-color="#ef4444"></stop>
+                  <stop offset="1" stop-color="#9333ea"></stop>
+                </linearGradient>
+              </defs>
+              <path d="M20,35 C20,15 45,15 60,35 C75,55 100,55 100,35 C100,15 75,15 60,35 C45,55 20,55 20,35 Z" fill="none" stroke="rgba(0,0,0,.07)" stroke-width="7" stroke-linecap="round"></path>
+              <path d="M20,35 C20,15 45,15 60,35 C75,55 100,55 100,35 C100,15 75,15 60,35 C45,55 20,55 20,35 Z" fill="none" stroke="url(#infGradHome)" stroke-width="7" stroke-linecap="round" style="stroke-dasharray:70 250;animation:dashMove 3.2s linear infinite"></path>
+            </svg>
+            <span style="position:absolute;top:14px;right:34px;font-size:16px;background:linear-gradient(135deg,#f97316,#ef4444);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:twinkle 2.8s ease-in-out infinite;animation-delay:.2s">✦</span>
+            <span style="position:absolute;bottom:16px;left:36px;font-size:12px;background:linear-gradient(135deg,#9333ea,#ef4444);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:twinkle 2.8s ease-in-out infinite;animation-delay:1.5s">✦</span>
+          </div>
+          <div style="margin-top:18px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">Step 3</div>
+          <div style="font-family:Montserrat,sans-serif;font-weight:700;font-size:21px;margin-top:8px">Enjoy your apps for life</div>
+          <p style="font-size:15px;line-height:1.55;color:rgba(0,0,0,.55);margin:10px 0 0">No subscription — a lifetime license with free updates forever.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="benefits" data-screen-label="Benefits" style="max-width:1180px;margin:0 auto;padding:20px 28px 70px">
+      <div style="border-radius:28px;background:#0a0a0a;color:#fff;padding:64px 40px">
+        <h2 style="font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(28px,4.4vw,44px);letter-spacing:-.02em;line-height:1.1;text-align:center;margin:0">Every app, <span style="background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">done right.</span></h2>
+        <p style="color:rgba(255,255,255,.6);max-width:520px;margin:14px auto 0;font-size:16px;line-height:1.55;text-align:center">One standard across the whole bundle — every single app ships with all of this.</p>
+        <div style="max-width:820px;margin:44px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:20px 48px">
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="flex:none;width:32px;height:32px;border-radius:50%;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:200% 200%;animation:gradientFlow 6s ease infinite;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(147,51,234,.4)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+            <span style="font-size:16px;font-weight:600;color:#fff">100% macOS-native</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="flex:none;width:32px;height:32px;border-radius:50%;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:200% 200%;animation:gradientFlow 6s ease infinite;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(147,51,234,.4)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+            <span style="font-size:16px;font-weight:600;color:#fff">Perfectly tuned for your device</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="flex:none;width:32px;height:32px;border-radius:50%;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:200% 200%;animation:gradientFlow 6s ease infinite;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(147,51,234,.4)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+            <span style="font-size:16px;font-weight:600;color:#fff">High performance, instant loading</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="flex:none;width:32px;height:32px;border-radius:50%;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:200% 200%;animation:gradientFlow 6s ease infinite;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(147,51,234,.4)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+            <span style="font-size:16px;font-weight:600;color:#fff">Lightweight — zero bloat</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="flex:none;width:32px;height:32px;border-radius:50%;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:200% 200%;animation:gradientFlow 6s ease infinite;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(147,51,234,.4)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+            <span style="font-size:16px;font-weight:600;color:#fff">Multifunctional by design</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="flex:none;width:32px;height:32px;border-radius:50%;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:200% 200%;animation:gradientFlow 6s ease infinite;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(147,51,234,.4)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+            <span style="font-size:16px;font-weight:600;color:#fff">Free updates forever</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="flex:none;width:32px;height:32px;border-radius:50%;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:200% 200%;animation:gradientFlow 6s ease infinite;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(147,51,234,.4)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+            <span style="font-size:16px;font-weight:600;color:#fff">Pay once — no subscription</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="flex:none;width:32px;height:32px;border-radius:50%;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:200% 200%;animation:gradientFlow 6s ease infinite;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(147,51,234,.4)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+            <span style="font-size:16px;font-weight:600;color:#fff">Runs on Apple silicon &amp; Intel</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" data-screen-label="FAQ" style="max-width:760px;margin:0 auto;padding:20px 28px 100px">
+      <h2 style="font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(26px,4vw,40px);text-align:center;letter-spacing:-.02em">Frequently asked <span style="background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">questions</span></h2>
+      <div style="margin-top:36px;border-top:1px solid rgba(0,0,0,.1)">
+        <sc-for list="{{ faqs }}" as="faq" hint-placeholder-count="6">
+          <div style="border-bottom:1px solid rgba(0,0,0,.1)">
+            <button onClick="{{ faq.onClick }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 4px;background:none;border:none;cursor:pointer;text-align:left;font-size:17px;font-weight:600;color:#0a0a0a">
+              <span>{{ faq.q }}</span>
+              <span style="font-size:24px;color:#9333ea;font-weight:400;line-height:1">{{ faq.sign }}</span>
+            </button>
+            <div style="{{ faq.bodyStyle }}">
+              <p style="margin:0;padding:0 4px 22px;color:rgba(0,0,0,.6);font-size:15px;line-height:1.65">{{ faq.a }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ SUPPORT ============ -->
+  <sc-if value="{{ isSupport }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <div style="max-width:760px;margin:0 auto;padding:26px 28px 0">
+      <button onClick="{{ goHome }}" style="display:inline-flex;align-items:center;gap:7px;background:none;border:none;cursor:pointer;font-size:14px;font-weight:600;color:rgba(0,0,0,.55);padding:6px 0" style-hover="color:#0a0a0a">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+        <span>Back</span>
+      </button>
+    </div>
+
+    <section data-screen-label="Support" style="max-width:760px;margin:0 auto;padding:44px 28px 10px;text-align:center">
+      <h1 style="font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(30px,4.6vw,48px);line-height:1.08;letter-spacing:-.03em;margin:0">Sup<span style="background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">port</span></h1>
+      <p style="max-width:480px;margin:16px auto 0;font-size:17px;line-height:1.55;color:rgba(0,0,0,.55)">Answers to common questions — and a direct line to us if you need more help.</p>
+    </section>
+
+    <section style="max-width:760px;margin:0 auto;padding:30px 28px 10px">
+      <div style="border-top:1px solid rgba(0,0,0,.1)">
+        <sc-for list="{{ supportFaqs }}" as="faq" hint-placeholder-count="5">
+          <div style="border-bottom:1px solid rgba(0,0,0,.1)">
+            <button onClick="{{ faq.onClick }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 4px;background:none;border:none;cursor:pointer;text-align:left;font-size:17px;font-weight:600;color:#0a0a0a">
+              <span>{{ faq.q }}</span>
+              <span style="font-size:24px;color:#9333ea;font-weight:400;line-height:1">{{ faq.sign }}</span>
+            </button>
+            <div style="{{ faq.bodyStyle }}">
+              <p style="margin:0;padding:0 4px 22px;color:rgba(0,0,0,.6);font-size:15px;line-height:1.65">{{ faq.a }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="max-width:760px;margin:0 auto;padding:44px 28px 100px">
+      <h2 style="font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(22px,3vw,30px);letter-spacing:-.02em;margin:0 0 22px">Contact us</h2>
+      <div style="display:flex;flex-direction:column;gap:16px;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:28px;background:#fff">
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <label for="support-email" style="font-size:13px;font-weight:700;color:rgba(0,0,0,.6)">Your email</label>
+          <input id="support-email" type="email" placeholder="you@example.com" style="width:100%;padding:13px 16px;border:1px solid rgba(0,0,0,.12);border-radius:11px;font-size:15px;outline:none;background:#fff" style-focus="border-color:#9333ea;box-shadow:0 0 0 3px rgba(147,51,234,.1)">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <label for="support-message" style="font-size:13px;font-weight:700;color:rgba(0,0,0,.6)">How can we help?</label>
+          <textarea id="support-message" rows="5" placeholder="Describe your question or issue…" style="width:100%;padding:13px 16px;border:1px solid rgba(0,0,0,.12);border-radius:11px;font-size:15px;outline:none;background:#fff;font-family:inherit;resize:vertical" style-focus="border-color:#9333ea;box-shadow:0 0 0 3px rgba(147,51,234,.1)"></textarea>
+        </div>
+        <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:13px;line-height:1.55;color:rgba(0,0,0,.6)">
+          <input type="checkbox" style="margin-top:2px;width:16px;height:16px;accent-color:#9333ea">
+          <span>I accept that my data is transferred and processed in accordance with GDPR rules solely to answer my request.</span>
+        </label>
+        <button style="align-self:flex-start;display:inline-flex;align-items:center;gap:9px;padding:13px 26px;border-radius:999px;border:none;cursor:pointer;font-weight:700;font-size:15px;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;animation:gradientFlow 6s ease infinite;color:#fff;box-shadow:0 8px 22px rgba(147,51,234,.28)" style-hover="filter:brightness(1.06)">Send message</button>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ PRIVACY ============ -->
+  <sc-if value="{{ isPrivacy }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <div style="max-width:760px;margin:0 auto;padding:26px 28px 0">
+      <button onClick="{{ goHome }}" style="display:inline-flex;align-items:center;gap:7px;background:none;border:none;cursor:pointer;font-size:14px;font-weight:600;color:rgba(0,0,0,.55);padding:6px 0" style-hover="color:#0a0a0a">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+        <span>Back</span>
+      </button>
+    </div>
+
+    <section data-screen-label="Privacy" style="max-width:760px;margin:0 auto;padding:44px 28px 100px">
+      <h1 style="font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(30px,4.6vw,48px);line-height:1.08;letter-spacing:-.03em;margin:0">Privacy <span style="background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">Policy</span></h1>
+      <div style="margin-top:26px;font-size:16px;line-height:1.7;color:rgba(0,0,0,.65);display:flex;flex-direction:column;gap:18px">
+        <p style="margin:0">Your privacy matters to us. All apps offered on UsefulApps.io — whether part of a paid bundle or available for free — are built with a simple principle: your data belongs to you.</p>
+        <p style="margin:0"><strong style="color:#0a0a0a">Paid apps.</strong> Our paid apps do not collect, store, or transmit any personal data. All app data stays locally on your device or, where you choose to enable it, in your personal iCloud account. Purchases are processed entirely by Apple through the App Store — we never see or store your payment information. Paid apps contain no advertising, no tracking, and no third-party analytics.</p>
+        <p style="margin:0"><strong style="color:#0a0a0a">Free apps.</strong> Our free apps follow the same standard: no personal data is collected and no user profiles are created. Some free apps may use basic, anonymized crash reporting or usage statistics provided by Apple's App Store framework to help us improve stability — this data cannot be linked to you and can be disabled in your device settings at any time.</p>
+        <p style="margin:0"><strong style="color:#0a0a0a">No third parties.</strong> We do not sell, rent, or share any data with third parties. Our apps do not embed third-party advertising SDKs or social media trackers.</p>
+        <p style="margin:0"><strong style="color:#0a0a0a">Questions.</strong> If you have any questions about this privacy policy or how our apps handle data, contact us anytime at privacy@usefulapps.io.</p>
+        <p style="margin:0;font-size:13px;color:rgba(0,0,0,.4)">Last updated: July 2026</p>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <sc-if value="{{ isHow }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <div style="max-width:1180px;margin:0 auto;padding:26px 28px 0">
+      <button onClick="{{ goHome }}" style="display:inline-flex;align-items:center;gap:7px;background:none;border:none;cursor:pointer;font-size:14px;font-weight:600;color:rgba(0,0,0,.55);padding:6px 0" style-hover="color:#0a0a0a">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+        <span>Back</span>
+      </button>
+    </div>
+
+    <section data-screen-label="How it works" style="max-width:900px;margin:0 auto;padding:44px 28px 20px;text-align:center">
+      <div style="font-size:14px;font-weight:700;letter-spacing:.02em;color:rgba(0,0,0,.45)">Three steps. Under a minute.</div>
+      <h1 style="font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(34px,5vw,58px);line-height:1.06;letter-spacing:-.03em;margin:14px 0 0">How it <span style="background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">works</span></h1>
+      <p style="max-width:520px;margin:18px auto 0;font-size:18px;line-height:1.55;color:rgba(0,0,0,.55)">From checkout to lifetime license — no account setup, no subscription, no fine print.</p>
+    </section>
+
+    <section style="max-width:1180px;margin:0 auto;padding:24px 28px 30px">
+      <div style="display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:16px">
+
+        <div style="flex:1 1 260px;max-width:400px;border:1px solid rgba(0,0,0,.08);border-radius:22px;background:#fff;padding:34px 26px;text-align:center;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.1)">
+          <div style="position:relative;height:150px;display:flex;align-items:center;justify-content:center">
+            <div style="position:relative;width:118px;height:118px;border-radius:26px;background:#fafafa;border:1px solid rgba(0,0,0,.07);display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px">
+              <div style="border-radius:10px;background:linear-gradient(135deg,#f97316,#ef4444);animation:tilePulse 2.4s ease-in-out infinite"></div>
+              <div style="border-radius:10px;background:linear-gradient(135deg,#ef4444,#9333ea);animation:tilePulse 2.4s ease-in-out infinite;animation-delay:.3s"></div>
+              <div style="border-radius:10px;background:linear-gradient(135deg,#9333ea,#4f46e5);animation:tilePulse 2.4s ease-in-out infinite;animation-delay:.6s"></div>
+              <div style="border-radius:10px;background:linear-gradient(135deg,#f59e0b,#ef4444);animation:tilePulse 2.4s ease-in-out infinite;animation-delay:.9s"></div>
+              <div style="position:absolute;top:-9px;right:-9px;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#f97316,#ef4444,#9333ea);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(147,51,234,.4);animation:badgePop 3.8s ease-in-out infinite"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></div>
+            </div>
+          </div>
+          <div style="margin-top:18px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">Step 1</div>
+          <div style="font-family:Montserrat,sans-serif;font-weight:700;font-size:21px;margin-top:8px">Select your bundle</div>
+          <p style="font-size:15px;line-height:1.55;color:rgba(0,0,0,.55);margin:10px 0 0">Pick the 10-app bundle — every app included, nothing to configure.</p>
+        </div>
+
+        <div aria-hidden="true" style="{{ howArrowWrapStyle }}">
+          <div style="{{ howArrowGroupStyle }}">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="animation:chevFlow 1.8s ease-in-out infinite"><path d="M9 5l7 7-7 7"></path></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="animation:chevFlow 1.8s ease-in-out infinite;animation-delay:.25s;margin-left:-8px"><path d="M9 5l7 7-7 7"></path></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="animation:chevFlow 1.8s ease-in-out infinite;animation-delay:.5s;margin-left:-8px"><path d="M9 5l7 7-7 7"></path></svg>
+          </div>
+        </div>
+
+        <div style="flex:1 1 260px;max-width:400px;border:1px solid rgba(0,0,0,.08);border-radius:22px;background:#fff;padding:34px 26px;text-align:center;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.1)">
+          <div style="position:relative;height:150px;display:flex;align-items:center;justify-content:center">
+            <div style="position:absolute;width:96px;height:96px;border-radius:50%;border:2px solid rgba(147,51,234,.55);animation:rippleOut 2.6s ease-out infinite"></div>
+            <div style="position:absolute;width:96px;height:96px;border-radius:50%;border:2px solid rgba(249,115,22,.55);animation:rippleOut 2.6s ease-out infinite;animation-delay:1.3s"></div>
+            <div style="position:relative;width:86px;height:86px;border-radius:50%;background:linear-gradient(150deg,#2c2c2c,#0a0a0a);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,.28);animation:softPulse 4s ease-in-out infinite">
+              <svg width="30" height="36" viewBox="0 0 384 512" fill="#fff" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg>
+            </div>
+          </div>
+          <div style="margin-top:18px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">Step 2</div>
+          <div style="font-family:Montserrat,sans-serif;font-weight:700;font-size:21px;margin-top:8px">Buy via the App Store</div>
+          <p style="font-size:15px;line-height:1.55;color:rgba(0,0,0,.55);margin:10px 0 0">One tap, $29 once — secure Apple checkout, instantly on all your Macs.</p>
+        </div>
+
+        <div aria-hidden="true" style="{{ howArrowWrapStyle }}">
+          <div style="{{ howArrowGroupStyle }}">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="animation:chevFlow 1.8s ease-in-out infinite"><path d="M9 5l7 7-7 7"></path></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="animation:chevFlow 1.8s ease-in-out infinite;animation-delay:.25s;margin-left:-8px"><path d="M9 5l7 7-7 7"></path></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="animation:chevFlow 1.8s ease-in-out infinite;animation-delay:.5s;margin-left:-8px"><path d="M9 5l7 7-7 7"></path></svg>
+          </div>
+        </div>
+
+        <div style="flex:1 1 260px;max-width:400px;border:1px solid rgba(0,0,0,.08);border-radius:22px;background:#fff;padding:34px 26px;text-align:center;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.1)">
+          <div style="position:relative;height:150px;display:flex;align-items:center;justify-content:center">
+            <svg width="160" height="100" viewBox="0 0 120 70">
+              <defs>
+                <linearGradient id="infGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#f97316"></stop>
+                  <stop offset="0.5" stop-color="#ef4444"></stop>
+                  <stop offset="1" stop-color="#9333ea"></stop>
+                </linearGradient>
+              </defs>
+              <path d="M20,35 C20,15 45,15 60,35 C75,55 100,55 100,35 C100,15 75,15 60,35 C45,55 20,55 20,35 Z" fill="none" stroke="rgba(0,0,0,.07)" stroke-width="7" stroke-linecap="round"></path>
+              <path d="M20,35 C20,15 45,15 60,35 C75,55 100,55 100,35 C100,15 75,15 60,35 C45,55 20,55 20,35 Z" fill="none" stroke="url(#infGrad)" stroke-width="7" stroke-linecap="round" style="stroke-dasharray:70 250;animation:dashMove 3.2s linear infinite"></path>
+            </svg>
+            <span style="position:absolute;top:14px;right:34px;font-size:16px;background:linear-gradient(135deg,#f97316,#ef4444);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:twinkle 2.8s ease-in-out infinite;animation-delay:.2s">✦</span>
+            <span style="position:absolute;bottom:16px;left:36px;font-size:12px;background:linear-gradient(135deg,#9333ea,#ef4444);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:twinkle 2.8s ease-in-out infinite;animation-delay:1.5s">✦</span>
+          </div>
+          <div style="margin-top:18px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">Step 3</div>
+          <div style="font-family:Montserrat,sans-serif;font-weight:700;font-size:21px;margin-top:8px">Enjoy your apps for life</div>
+          <p style="font-size:15px;line-height:1.55;color:rgba(0,0,0,.55);margin:10px 0 0">No subscription — a lifetime license with free updates forever.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section style="max-width:760px;margin:0 auto;padding:20px 28px 100px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px">
+      <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:11px;padding:16px 30px;border-radius:999px;text-decoration:none;font-weight:700;font-size:17px;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;animation:gradientFlow 6s ease infinite;color:#fff;box-shadow:0 10px 30px rgba(147,51,234,.28)" style-hover="filter:brightness(1.06)">
+        <svg width="18" height="21" viewBox="0 0 384 512" fill="#fff" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg>
+        <span>Get the Bundle on the App Store</span>
+      </a>
+      <span style="font-size:13px;color:rgba(0,0,0,.4)">One license · 10 apps · free updates forever</span>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ APP SUBPAGE ============ -->
+  <sc-if value="{{ isApp }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <div style="max-width:1180px;margin:0 auto;padding:26px 28px 0">
+      <button onClick="{{ goHome }}" style="display:inline-flex;align-items:center;gap:7px;background:none;border:none;cursor:pointer;font-size:14px;font-weight:600;color:rgba(0,0,0,.55);padding:6px 0" style-hover="color:#0a0a0a">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+        <span>All apps</span>
+      </button>
+    </div>
+
+    <section data-screen-label="App hero" style="max-width:1180px;margin:0 auto;padding:24px 28px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:center">
+      <div>
+        <sc-if value="{{ appHasIcon }}" hint-placeholder-val="{{ false }}">
+          <img src="{{ app.icon }}" alt="" style="width:84px;height:84px;border-radius:20px;object-fit:cover;display:block;box-shadow:0 8px 22px rgba(0,0,0,.2)">
+        </sc-if>
+        <sc-if value="{{ appNoIcon }}" hint-placeholder-val="{{ true }}">
+        <div style="width:78px;height:78px;border-radius:20px;background:linear-gradient(150deg,#3c3c3c,#0b0b0b);display:flex;align-items:center;justify-content:center;color:#fff;font-family:Montserrat,sans-serif;font-weight:700;font-size:36px;box-shadow:0 8px 22px rgba(0,0,0,.2)">{{ app.initial }}</div>
+        </sc-if>
+        <div style="display:inline-block;margin-top:20px;font-size:11px;font-weight:700;color:rgba(0,0,0,.5);text-transform:uppercase;letter-spacing:.08em;padding:5px 11px;border:1px solid rgba(0,0,0,.12);border-radius:999px">{{ app.category }}</div>
+        <h1 style="font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(40px,6vw,64px);line-height:1;letter-spacing:-.02em;margin:16px 0 0">
+          <span style="background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">{{ app.name }}</span>
+        </h1>
+        <p style="font-size:20px;line-height:1.5;color:rgba(0,0,0,.6);margin:18px 0 0;max-width:440px">{{ app.tagline }}</p>
+        <sc-if value="{{ appIsFree }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <div style="display:flex;align-items:baseline;gap:11px;margin:28px 0 22px">
+              <span style="font-family:Montserrat,sans-serif;font-weight:800;font-size:40px;line-height:1;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">Free</span>
+            </div>
+            <span style="display:inline-flex;align-items:center;gap:11px;padding:15px 28px;border-radius:999px;font-weight:700;font-size:16px;background:#0a0a0a;color:#fff;cursor:default">
+              <svg width="18" height="21" viewBox="0 0 384 512" fill="#fff" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg>
+              <span>Coming soon</span>
+            </span>
+          </div>
+        </sc-if>
+        <sc-if value="{{ appNotFree }}" hint-placeholder-val="{{ true }}">
+        <div>
+        <div style="display:flex;align-items:baseline;gap:11px;margin:28px 0 22px">
+          <span style="font-size:19px;text-decoration:line-through;color:rgba(0,0,0,.3);font-weight:600">$79</span>
+          <span style="font-family:Montserrat,sans-serif;font-weight:800;font-size:40px;line-height:1;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">$29</span>
+          <span style="font-size:15px;color:rgba(0,0,0,.5);font-weight:600">/ lifetime — all 10 apps</span>
+        </div>
+        <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:11px;padding:15px 28px;border-radius:999px;text-decoration:none;font-weight:700;font-size:16px;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;animation:gradientFlow 6s ease infinite;color:#fff;box-shadow:0 10px 28px rgba(147,51,234,.28)" style-hover="filter:brightness(1.06)">
+          <svg width="18" height="21" viewBox="0 0 384 512" fill="#fff" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg>
+          <span>Get {{ app.name }} in the Bundle</span>
+        </a>
+        <div style="font-size:13px;color:rgba(0,0,0,.4);margin-top:12px">Included free with your one lifetime license.</div>
+        </div>
+        </sc-if>
+      </div>
+      <div style="border-radius:20px;overflow:hidden;border:1px solid rgba(0,0,0,.08)">
+        <sc-if value="{{ appHasShots }}" hint-placeholder-val="{{ false }}">
+          <img src="{{ appShot0 }}" alt="" onClick="{{ openLb0 }}" style="width:100%;aspect-ratio:2880/1800;object-fit:cover;display:block;cursor:zoom-in">
+        </sc-if>
+        <sc-if value="{{ appNoShots }}" hint-placeholder-val="{{ true }}">
+          <div style="min-height:340px;background:repeating-linear-gradient(45deg,#f5f5f5,#f5f5f5 14px,#ededed 14px,#ededed 28px);display:flex;align-items:center;justify-content:center">
+            <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:rgba(0,0,0,.35);letter-spacing:.05em">{{ app.name }} — app screenshot</span>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+
+    <section style="max-width:1180px;margin:0 auto;padding:8px 28px 30px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+      <sc-for list="{{ shots }}" as="shot" hint-placeholder-count="3">
+        <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.08)">
+          <sc-if value="{{ shot.hasSrc }}" hint-placeholder-val="{{ false }}">
+            <img src="{{ shot.src }}" alt="" onClick="{{ shot.onClick }}" style="width:100%;aspect-ratio:2880/1800;object-fit:cover;display:block;cursor:zoom-in">
+          </sc-if>
+          <sc-if value="{{ shot.noSrc }}" hint-placeholder-val="{{ true }}">
+            <div style="width:100%;aspect-ratio:2880/1800;background:repeating-linear-gradient(45deg,#f6f6f6,#f6f6f6 10px,#efefef 10px,#efefef 20px);display:flex;align-items:center;justify-content:center">
+              <span style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:rgba(0,0,0,.32);letter-spacing:.05em">{{ shot.label }}</span>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </section>
+
+    <sc-if value="{{ appHasAbout }}" hint-placeholder-val="{{ false }}">
+      <section style="max-width:900px;margin:0 auto;padding:24px 28px 10px">
+        <h2 style="font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(24px,3.4vw,34px);letter-spacing:-.02em;margin:0">About {{ app.name }}</h2>
+        <div style="margin-top:18px;display:flex;flex-direction:column;gap:16px">
+          <sc-for list="{{ aboutParas }}" as="para" hint-placeholder-count="3">
+            <p style="margin:0;font-size:16px;line-height:1.7;color:rgba(0,0,0,.6)">{{ para }}</p>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+    <section style="max-width:1180px;margin:0 auto;padding:36px 28px">
+      <h2 style="font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(24px,3.4vw,34px);letter-spacing:-.02em;margin:0">Features</h2>
+      <div style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+        <sc-for list="{{ app.features }}" as="feature" hint-placeholder-count="4">
+          <div style="display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border:1px solid rgba(0,0,0,.08);border-radius:14px">
+            <span style="flex:none;margin-top:1px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+            <span style="font-size:16px;font-weight:600;color:#0a0a0a;line-height:1.4">{{ feature }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="max-width:1180px;margin:0 auto;padding:20px 28px 40px">
+      <h2 style="font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(24px,3.4vw,34px);letter-spacing:-.02em;margin:0">System requirements</h2>
+      <div style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.08);border-radius:14px;overflow:hidden">
+        <div style="background:#fff;padding:22px 24px"><div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:rgba(0,0,0,.4)">macOS</div><div style="font-size:16px;font-weight:600;margin-top:6px">12 Monterey or later</div></div>
+        <div style="background:#fff;padding:22px 24px"><div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:rgba(0,0,0,.4)">Chip</div><div style="font-size:16px;font-weight:600;margin-top:6px">Apple silicon &amp; Intel</div></div>
+        <div style="background:#fff;padding:22px 24px"><div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:rgba(0,0,0,.4)">Download size</div><div style="font-size:16px;font-weight:600;margin-top:6px">{{ app.size }} MB</div></div>
+        <div style="background:#fff;padding:22px 24px"><div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:rgba(0,0,0,.4)">Sync</div><div style="font-size:16px;font-weight:600;margin-top:6px">iCloud (optional)</div></div>
+      </div>
+    </section>
+
+    <sc-if value="{{ appNotFree }}" hint-placeholder-val="{{ true }}">
+    <section id="pricing" style="max-width:1180px;margin:0 auto;padding:30px 28px 40px">
+      <div style="border-radius:28px;background:#0a0a0a;color:#fff;padding:56px 40px;text-align:center">
+        <div style="font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(26px,4vw,42px);letter-spacing:-.02em;line-height:1.1">Get {{ app.name }} and <span style="background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">9 more.</span></div>
+        <p style="color:rgba(255,255,255,.6);max-width:500px;margin:14px auto 0;font-size:16px;line-height:1.55">One lifetime license unlocks the entire bundle — no subscription, ever.</p>
+        <div style="display:flex;align-items:baseline;justify-content:center;gap:12px;margin:30px 0 26px">
+          <span style="font-size:22px;text-decoration:line-through;color:rgba(255,255,255,.4);font-weight:600">$79</span>
+          <span style="font-family:Montserrat,sans-serif;font-weight:800;font-size:52px;line-height:1;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">$29</span>
+          <span style="font-size:16px;color:rgba(255,255,255,.5);font-weight:600">/ lifetime</span>
+        </div>
+        <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:11px;padding:16px 30px;border-radius:999px;text-decoration:none;font-weight:700;font-size:17px;background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;animation:gradientFlow 6s ease infinite;color:#fff;box-shadow:0 10px 30px rgba(147,51,234,.35)" style-hover="filter:brightness(1.06)">
+          <svg width="18" height="21" viewBox="0 0 384 512" fill="#fff" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg>
+          <span>Get the Bundle on the App Store</span>
+        </a>
+      </div>
+    </section>
+    </sc-if>
+
+    <sc-if value="{{ showLightbox }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ closeLb }}" style="position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.88);display:flex;align-items:center;justify-content:center;padding:40px">
+        <img src="{{ lbSrc }}" alt="" onClick="{{ stopClick }}" style="max-width:92%;max-height:88%;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6);display:block">
+        <button onClick="{{ prevLb }}" aria-label="Previous" style="position:absolute;left:18px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:none;cursor:pointer;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center" style-hover="background:rgba(255,255,255,.24)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+        </button>
+        <button onClick="{{ nextLb }}" aria-label="Next" style="position:absolute;right:18px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:none;cursor:pointer;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center" style-hover="background:rgba(255,255,255,.24)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+        </button>
+        <button onClick="{{ closeLb }}" aria-label="Close" style="position:absolute;right:18px;top:18px;width:44px;height:44px;border-radius:50%;border:none;cursor:pointer;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center" style-hover="background:rgba(255,255,255,.24)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+        </button>
+        <div style="position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);font-size:13px;font-weight:600">{{ lbCounter }}</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ showRelated }}" hint-placeholder-val="{{ false }}">
+      <section style="max-width:1180px;margin:0 auto;padding:20px 28px 60px">
+        <h2 style="font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(22px,3vw,30px);letter-spacing:-.02em;margin:0 0 22px">More in {{ app.category }}</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:18px">
+          <sc-for list="{{ related }}" as="card" hint-placeholder-count="4">
+            <div onClick="{{ card.onClick }}" style="cursor:pointer;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:22px;background:#fff;transition:transform .18s ease,box-shadow .18s ease,border-color .18s" style-hover="transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.1);border-color:rgba(0,0,0,.14)">
+              <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(150deg,#3c3c3c,#0b0b0b);display:flex;align-items:center;justify-content:center;color:#fff;font-family:Montserrat,sans-serif;font-weight:700;font-size:21px">{{ card.initial }}</div>
+              <div style="font-family:Montserrat,sans-serif;font-weight:700;font-size:16px;margin-top:15px">{{ card.name }}</div>
+              <div style="font-size:14px;color:rgba(0,0,0,.55);margin-top:7px;line-height:1.45">{{ card.tagline }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+    <section id="faq" style="max-width:760px;margin:0 auto;padding:20px 28px 100px">
+      <h2 style="font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(26px,4vw,40px);text-align:center;letter-spacing:-.02em">Frequently asked <span style="background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">questions</span></h2>
+      <div style="margin-top:36px;border-top:1px solid rgba(0,0,0,.1)">
+        <sc-for list="{{ faqs }}" as="faq" hint-placeholder-count="6">
+          <div style="border-bottom:1px solid rgba(0,0,0,.1)">
+            <button onClick="{{ faq.onClick }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 4px;background:none;border:none;cursor:pointer;text-align:left;font-size:17px;font-weight:600;color:#0a0a0a">
+              <span>{{ faq.q }}</span>
+              <span style="font-size:24px;color:#9333ea;font-weight:400;line-height:1">{{ faq.sign }}</span>
+            </button>
+            <div style="{{ faq.bodyStyle }}">
+              <p style="margin:0;padding:0 4px 22px;color:rgba(0,0,0,.6);font-size:15px;line-height:1.65">{{ faq.a }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <footer style="border-top:1px solid rgba(0,0,0,.08);padding:44px 28px;text-align:center;color:rgba(0,0,0,.45);font-size:13px">
+    <div style="display:flex;align-items:baseline;justify-content:center;font-family:Montserrat,sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em">
+      <span style="color:#0a0a0a">Useful</span><span style="background:linear-gradient(270deg,#f97316,#ef4444,#9333ea,#f97316);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:gradientFlow 6s ease infinite">Apps</span><span style="font-size:14px;font-weight:700;color:rgba(0,0,0,.4);margin-left:2px">.io</span>
+    </div>
+    <div style="margin-top:8px">10 handcrafted Mac apps · one lifetime license</div>
+    <div style="margin-top:4px">© 2026 UsefulApps.io. Made for macOS.</div>
+    <div style="margin-top:10px;display:flex;justify-content:center;gap:18px"><span onClick="{{ goSupport }}" style="cursor:pointer;font-weight:600;text-decoration:underline;text-underline-offset:3px">Support</span><span onClick="{{ goPrivacy }}" style="cursor:pointer;font-weight:600;text-decoration:underline;text-underline-offset:3px">Privacy Policy</span></div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:860},&quot;layout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;grid&quot;,&quot;list&quot;,&quot;gallery&quot;],&quot;default&quot;:&quot;grid&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Homepage&quot;},&quot;showAnnouncement&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Homepage&quot;},&quot;showRelated&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;App pages&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    const raw = [
+      ["Inkwell","Writing","Markdown writing without the noise.",["Live markdown preview","Typewriter & focus mode","Export to PDF, HTML & Word","iCloud document sync"],14,"linear-gradient(135deg,#f97316,#ef4444)"],
+      ["Cadence","Focus","The Pomodoro timer done right.",["Custom focus & break cycles","Menu-bar countdown","Daily focus statistics","Gentle sound cues"],7,"linear-gradient(135deg,#ef4444,#9333ea)"],
+      ["Ledger","Focus","Time tracking that stays invisible.",["Automatic app tracking","Project & tag reports","Idle detection","CSV export"],11,"linear-gradient(135deg,#9333ea,#4f46e5)"],
+      ["Tiler","System","Snap windows into perfect grids.",["Keyboard-driven snapping","Custom grid sizes","Multi-display support","Drag-to-edge zones"],10,"linear-gradient(135deg,#f97316,#9333ea)"],
+      ["Perch","System","Every system stat in your menu bar.",["CPU, memory & network graphs","Temperature monitoring","Custom layouts","Ultra-low resource use"],13,"linear-gradient(135deg,#fb7185,#9333ea)"],
+      ["Broom","System","Reclaim gigabytes of disk space.",["Large & duplicate finder","Cache cleanup","Uninstall leftovers","Safe review before delete"],13,"linear-gradient(135deg,#ec4899,#8b5cf6)"],
+      ["Stash","Utilities","A clipboard that never forgets.",["Unlimited clipboard history","Instant fuzzy search","Pin favorites","Paste as plain text"],8,"linear-gradient(135deg,#f59e0b,#ef4444)"],
+      ["Beacon","Utilities","A launcher that finds anything.",["App & file search","Quick calculations","Clipboard actions","Custom commands"],10,"linear-gradient(135deg,#ef4444,#f97316)"],
+      ["Frame","Capture","Beautiful screenshots in seconds.",["Device & window mockups","Gradient backgrounds","Shadow & padding controls","One-click export"],15,"linear-gradient(135deg,#a855f7,#ec4899)"],
+      ["Hexon","Capture","A color picker for pros.",["System-wide eyedropper","Palette generation","Contrast checker","Copy in any format"],6,"linear-gradient(135deg,#7c3aed,#db2777)"]
+    ];
+    const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    this.APPS = raw.map(r => ({ id: slug(r[0]), name: r[0], category: r[1], tagline: r[2], features: r[3], size: r[4], wall: r[5], initial: r[0][0] }));
+    this.APPS.unshift({
+      id: "time-tracker", name: "Time Tracker", category: "Focus", free: true,
+      tagline: "Powerful Pomodoro timer, precision stopwatch, and interactive hourglass — instantly available from your Mac's menu bar.",
+      features: ["Focus countdown timer", "Fully customizable Pomodoro timer", "High-precision stopwatch with lap support", "Interactive animated hourglass", "Live menu bar countdown", "Daily, monthly and yearly statistics", "Custom notification sounds", "Launch at login", "Native Apple Silicon performance", "Beautiful dark interface"],
+      size: 12, wall: "linear-gradient(135deg,#6d28d9,#a855f7)", initial: "T",
+      icon: "uploads/1024x1024bb.png",
+      shots: ["uploads/Focus_Timer_1 copy.webp", "uploads/Focus_Timer_2 copy.webp", "uploads/Focus_Timer_3 copy.webp", "uploads/Focus_Timer_4 copy.webp"],
+      about: [
+        "Time Tracker helps you stay productive with a collection of beautifully designed timing tools that live directly in your Mac's menu bar. Whether you're studying for an exam, working on an important project, writing code, or simply trying to stay on schedule, it gives you everything you need without getting in your way.",
+        "Four timing modes: a clean Focus countdown timer with built-in or custom durations; a Pomodoro timer with configurable work sessions, short breaks and long breaks and automatic transitions; a stopwatch with precision down to one tenth of a second and lap support; and an interactive hourglass filled with realistic flowing sand — flip it with your mouse just like a real one.",
+        "Always available: it lives in your menu bar, so it's never more than a click away. Monitor your remaining time directly from the menu bar and quickly start, pause, skip or reset without interrupting your workflow.",
+        "Build better habits with built-in statistics: daily focus sessions, total focus time, current streak, plus 7-day, 30-day and yearly history. Small improvements every day quickly become lasting habits.",
+        "Built for productivity: no accounts, no subscriptions, no advertisements, no unnecessary distractions. Privacy comes first — the app works entirely offline with no tracking, no analytics and no data collection. Everything stays securely stored on your Mac."
+      ]
+    });
+    this.CATS = ["All", ...Array.from(new Set(this.APPS.map(a => a.category)))];
+    this.SUPPORT_FAQS = [
+      { q: "I bought the bundle but an app is missing — what now?", a: "Make sure you're signed in to the App Store with the same Apple Account you used for the purchase, then use 'Restore Purchases' inside any of the apps." },
+      { q: "How do I install the apps on a new Mac?", a: "Simply sign in to the App Store with your Apple Account on the new Mac and download the apps — your license travels with your account." },
+      { q: "An app isn't working correctly. What should I do?", a: "First, make sure you're on the latest version via the App Store's Updates tab. If the issue persists, contact us below with the app name and your macOS version." },
+      { q: "How do I request a refund?", a: "Refunds are handled by Apple. Visit reportaproblem.apple.com, sign in, and select the bundle purchase — most requests within 30 days are approved." },
+      { q: "Where can I suggest a feature?", a: "We'd love to hear it! Use the contact form below and tell us which app your idea is for." }
+    ];
+    this.FAQS = [
+      { q: "What exactly do I get?", a: "All 10 Mac apps in the bundle. One license unlocks every single one of them — forever." },
+      { q: "How does the pricing work?", a: "It's always a bundle of 10 apps for one one-time price: $29 instead of $79. No tiers, no add-ons." },
+      { q: "Is this really a one-time payment?", a: "Yes. Pay $29 once and the license is yours for life — no subscriptions, no renewals, no hidden fees." },
+      { q: "Do I get free updates?", a: "Every app receives free updates for the lifetime of your license, including major new versions." },
+      { q: "How many Macs can I use it on?", a: "One license covers all the Macs signed in to your personal Apple Account." },
+      { q: "Can I get a refund?", a: "Absolutely. If the bundle isn't for you, request a refund within 30 days through the App Store." }
+    ];
+    this.state = { route: { name: "home" }, query: "", category: "All", layout: undefined, openFaq: 0, menuOpen: false, vw: 1280, lbIdx: -1 };
+  }
+
+  componentDidMount() {
+    this._shineOn = true;
+    const tick = () => {
+      if (!this._shineOn) return;
+      const els = Array.prototype.slice.call(document.querySelectorAll('[data-shine]'));
+      if (els.length) {
+        const el = els[Math.floor(Math.random() * els.length)];
+        const dur1 = 1.2 + Math.random() * 0.7;
+        const two = Math.random() < 0.5;
+        this.passShine(el, dur1, () => {
+          if (two && this._shineOn) {
+            this.passShine(el, 1.2 + Math.random() * 0.7, function () {});
+          }
+        });
+      }
+      this._shineTimer = setTimeout(tick, 3000 + Math.random() * 4000);
+    };
+    this._shineTimer = setTimeout(tick, 1200 + Math.random() * 1800);
+    this._syncVw = () => {
+      const w = document.documentElement.clientWidth || window.innerWidth;
+      if (w !== this.state.vw) {
+        const patch = { vw: w };
+        if (w >= 1024 && this.state.menuOpen) patch.menuOpen = false;
+        this.setState(patch);
+      }
+    };
+    this._onResize = () => this._syncVw();
+    window.addEventListener('resize', this._onResize);
+    this._vwTimer = setInterval(() => this._syncVw(), 300);
+    this._syncVw();
+  }
+  componentWillUnmount() {
+    this._shineOn = false;
+    clearTimeout(this._shineTimer);
+    if (this._onResize) window.removeEventListener('resize', this._onResize);
+    if (this._vwTimer) clearInterval(this._vwTimer);
+  }
+  passShine(el, dur, done) {
+    if (!el) return;
+    el.style.transition = 'none';
+    el.style.backgroundPosition = '150% 0';
+    void el.offsetWidth;
+    el.style.transition = 'background-position ' + dur + 's linear';
+    el.style.backgroundPosition = '-150% 0';
+    setTimeout(done, dur * 1000 + 20);
+  }
+
+  openApp(id) { this.setState({ route: { name: "app", id }, openFaq: 0, menuOpen: false, lbIdx: -1 }); if (typeof window !== "undefined") window.scrollTo(0, 0); }
+  goHome() { this.setState({ route: { name: "home" }, menuOpen: false }); if (typeof window !== "undefined") window.scrollTo(0, 0); }
+  goHow() { this.setState({ route: { name: "how" }, menuOpen: false }); if (typeof window !== "undefined") window.scrollTo(0, 0); }
+  goPrivacy() { this.setState({ route: { name: "privacy" }, menuOpen: false }); if (typeof window !== "undefined") window.scrollTo(0, 0); }
+  goSupport() { this.setState({ route: { name: "support" }, menuOpen: false, openFaq: -1 }); if (typeof window !== "undefined") window.scrollTo(0, 0); }
+  setQuery(v) { this.setState(s => ({ query: v, route: s.route.name === "home" ? s.route : { name: "home" } })); }
+  setCategory(c) { this.setState({ category: c }); }
+  setLayout(l) { this.setState({ layout: l }); }
+  toggleFaq(i) { this.setState(s => ({ openFaq: s.openFaq === i ? -1 : i })); }
+
+  renderVals() {
+    const layout = this.state.layout ?? this.props.layout ?? "grid";
+    const showAnnouncement = this.props.showAnnouncement ?? true;
+    const showRelatedProp = this.props.showRelated ?? true;
+    const q = this.state.query.trim().toLowerCase();
+    const cat = this.state.category;
+    const match = a =>
+      (cat === "All" || a.category === cat) &&
+      (!q || a.name.toLowerCase().includes(q) || a.category.toLowerCase().includes(q) || a.tagline.toLowerCase().includes(q) || a.features.some(f => f.toLowerCase().includes(q)));
+    const card = a => ({ ...a, hasIcon: !!a.icon, noIcon: !a.icon, hasShot: !!a.shots, noShot: !a.shots, shot0: a.shots ? a.shots[0] : "", onClick: () => this.openApp(a.id) });
+    const filtered = this.APPS.filter(match).map(card);
+
+    const isHome = this.state.route.name === "home";
+    const current = isHome ? null : this.APPS.find(a => a.id === this.state.route.id) || null;
+    const related = current ? this.APPS.filter(a => a.category === current.category && a.id !== current.id).slice(0, 4).map(card) : [];
+
+    const chipOn = "cursor:pointer;border:1px solid #0a0a0a;padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600;background:#0a0a0a;color:#fff";
+    const chipOff = "cursor:pointer;border:1px solid rgba(0,0,0,.14);padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600;background:#fff;color:#0a0a0a";
+    const chips = this.CATS.map(c => ({ name: c, style: c === cat ? chipOn : chipOff, onClick: () => this.setCategory(c) }));
+
+    const segOn = "cursor:pointer;border:none;padding:7px 16px;border-radius:9px;font-size:13px;font-weight:600;background:#fff;color:#0a0a0a;box-shadow:0 1px 2px rgba(0,0,0,.12)";
+    const segOff = "cursor:pointer;border:none;padding:7px 16px;border-radius:9px;font-size:13px;font-weight:600;background:transparent;color:rgba(0,0,0,.5)";
+    const layouts = [["grid", "Grid"], ["list", "List"], ["gallery", "Gallery"]].map(([k, l]) => ({ label: l, style: k === layout ? segOn : segOff, onClick: () => this.setLayout(k) }));
+
+    const supportFaqs = this.SUPPORT_FAQS.map((f, i) => ({
+      q: f.q, a: f.a,
+      sign: this.state.openFaq === i ? "\u2013" : "+",
+      bodyStyle: this.state.openFaq === i ? "display:block" : "display:none",
+      onClick: () => this.toggleFaq(i)
+    }));
+    const faqs = this.FAQS.map((f, i) => ({
+      q: f.q, a: f.a,
+      sign: this.state.openFaq === i ? "\u2013" : "+",
+      bodyStyle: this.state.openFaq === i ? "display:block" : "display:none",
+      onClick: () => this.toggleFaq(i)
+    }));
+
+    const shots = current
+      ? (current.shots
+        ? current.shots.slice(1).map((src, i) => ({ hasSrc: true, noSrc: false, src, label: "", onClick: () => this.setState({ lbIdx: i + 1 }) }))
+        : [current.name + " — main window", current.name + " — settings", current.name + " — menu bar"].map(l => ({ hasSrc: false, noSrc: true, src: "", label: l })))
+      : [];
+    const appHasIcon = !!(current && current.icon);
+    const appNoIcon = !!(current && !current.icon);
+    const appHasShots = !!(current && current.shots);
+    const appNoShots = !!(current && !current.shots);
+    const appHasAbout = !!(current && current.about);
+    const aboutParas = current && current.about ? current.about : [];
+
+    const vw = this.state.vw;
+    const isCompact = vw < 1024;
+    const isMobile = vw < 640;
+
+    return {
+      posArrowsX: isMobile ? '8%' : '3%', posArrowsY: isMobile ? '80%' : '64%',
+      posBoltX: isMobile ? '1%' : '9%',
+      posBurgerX: isMobile ? '5%' : '4%', posBurgerY: isMobile ? '72%' : '62%',
+      posCheckX: isMobile ? '30%' : '24%', posCheckY: isMobile ? '4%' : '8%',
+      heroH1Size: isMobile ? '8vw' : 'clamp(30px,4.8vw,56px)',
+      heroDash: isMobile ? '' : ' —',
+      cardNameSize: isMobile ? '15px' : '18px',
+      howArrowWrapStyle: isMobile
+        ? 'width:100%;display:flex;align-items:center;justify-content:center;padding:6px 0'
+        : 'flex:none;display:flex;align-items:center;justify-content:center;gap:0;min-height:60px;padding:0 2px',
+      howArrowGroupStyle: isMobile
+        ? 'display:flex;align-items:center;transform:rotate(90deg) scale(1.45)'
+        : 'display:flex;align-items:center',
+      isCompact, showDesktopNav: !isCompact,
+      menuOpen: isCompact && this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      menuGoHow: () => this.goHow(),
+      isHome, isApp: this.state.route.name === "app", isHow: this.state.route.name === "how", isPrivacy: this.state.route.name === "privacy", isSupport: this.state.route.name === "support", app: current, related,
+      showRelated: showRelatedProp && related.length > 0,
+      filtered, resultCount: filtered.length, noResults: filtered.length === 0,
+      categoryLabel: cat, showAnnouncement,
+      query: this.state.query,
+      onQueryInput: e => this.setQuery(e.target.value),
+      chips, layouts, faqs, supportFaqs, shots,
+      appHasIcon, appNoIcon, appHasShots, appNoShots, appHasAbout, aboutParas,
+      appShot0: current && current.shots ? current.shots[0] : "",
+      appIsFree: !!(current && current.free), appNotFree: !!(current && !current.free),
+      showLightbox: !!(current && current.shots && this.state.lbIdx >= 0),
+      lbSrc: current && current.shots && this.state.lbIdx >= 0 ? current.shots[this.state.lbIdx] : "",
+      lbCounter: current && current.shots && this.state.lbIdx >= 0 ? (this.state.lbIdx + 1) + " / " + current.shots.length : "",
+      openLb0: () => this.setState({ lbIdx: 0 }),
+      closeLb: () => this.setState({ lbIdx: -1 }),
+      stopClick: e => e.stopPropagation(),
+      nextLb: e => { e.stopPropagation(); this.setState(s => ({ lbIdx: (s.lbIdx + 1) % current.shots.length })); },
+      prevLb: e => { e.stopPropagation(); this.setState(s => ({ lbIdx: (s.lbIdx - 1 + current.shots.length) % current.shots.length })); },
+      isGrid: layout === "grid", isList: layout === "list", isGallery: layout === "gallery",
+      goHome: () => this.goHome(),
+      goHow: () => this.goHow(),
+      goPrivacy: () => this.goPrivacy(),
+      goSupport: () => this.goSupport()
+    };
+  }
+}
+</script>
+</body>
+</html>
