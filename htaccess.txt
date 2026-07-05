@@ -1,0 +1,5 @@
+# Rewrite all non-file URLs (/time-tracker, /support, /privacy, ...) to index.html
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]

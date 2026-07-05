@@ -12,6 +12,14 @@ Schwarz/Weiß-Design mit animierten Gradient-Headlines, Live-Suche, Kategoriefil
 - `image-slot.js`, `support.js` — Hilfsskripte (nur für die Quelldatei; in `index.html` bereits eingebettet).
 - `uploads/` — Bild- und Icon-Assets.
 
+## URLs / Deep-Links
+
+Die Seite nutzt echte URLs (`/time-tracker`, `/support`, `/privacy`, `/how-it-works`).
+Damit direkte Aufrufe dieser URLs funktionieren:
+
+- **GitHub Pages:** `404.html` (Kopie der index.html) mit hochladen — liegt bei.
+- **Hostinger / Apache:** `.htaccess` mit hochladen — liegt bei.
+
 ## Auf Hostinger veröffentlichen
 
 ### Variante A — direkt (schnellster Weg)
